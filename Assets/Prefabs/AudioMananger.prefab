@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3695583726859219399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3695583726859219393}
+  - component: {fileID: 3695583726859219398}
+  m_Layer: 0
+  m_Name: AudioMananger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3695583726859219393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3695583726859219399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3695583726859219398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3695583726859219399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3c2a9e152af4304bdac96f8ad0c7c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Ambient
+    audioClip: {fileID: 8300000, guid: 38ceec551d9554fbea808a0dc5879768, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Wall
+    audioClip: {fileID: 8300000, guid: 90c9ec0b842d144d9afcc4c639a399fa, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Path
+    audioClip: {fileID: 8300000, guid: a7cd0113ae06e44fe88e725b5776688b, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Pitfall
+    audioClip: {fileID: 8300000, guid: fd2a6eead9a7246bab6caf8bdce1dda4, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Creature
+    audioClip: {fileID: 8300000, guid: 2fa88e50d8bd744ecb921eb45c5c0509, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Death
+    audioClip: {fileID: 8300000, guid: b8f5e39a877fb4488b73319e9dc7e1cc, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}

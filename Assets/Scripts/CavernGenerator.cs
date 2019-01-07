@@ -4,6 +4,7 @@ using UnityEngine;
 public class CavernGenerator : MonoBehaviour
 {
     private MapParser mapParser;
+    [SerializeField]
     private TilePlacer tilePlacer;
 
     [SerializeField]
@@ -12,7 +13,6 @@ public class CavernGenerator : MonoBehaviour
 
     private void Awake()
     {
-        tilePlacer = new TilePlacer();
         mapParser = new MapParser();
         foreach (var image in imageMaps)
         {
