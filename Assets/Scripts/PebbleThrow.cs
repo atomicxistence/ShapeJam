@@ -2,6 +2,13 @@
 
 public class PebbleThrow : MonoBehaviour
 {
+    private Transform player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -11,8 +18,16 @@ public class PebbleThrow : MonoBehaviour
             var tile = target.transform.gameObject.GetComponent<ITile>();
             if (tile != null)
             {
-                tile.PlayAudio();
+                if (IsClickingOnSurroundingTile(target.transform))
+                {
+                    tile.PlayAudio();
+                }
             }
         }
+    }
+
+    private bool IsClickingOnSurroundingTile(Transform tile)
+    {
+        return Vector3.Distance(tile.position, player.position) <= 1;
     }
 }

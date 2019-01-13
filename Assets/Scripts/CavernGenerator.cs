@@ -22,7 +22,9 @@ public class CavernGenerator : MonoBehaviour
 
     private void Start()
     {
-        tilePlacer.PlaceTiles(GetRandomMap());
+        var map = GetRandomMap();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().SetCurrentMap(map);
+        tilePlacer.PlaceTiles(map);
     }
 
     private TileType[,] GetRandomMap()

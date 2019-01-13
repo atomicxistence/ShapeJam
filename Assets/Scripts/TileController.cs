@@ -4,12 +4,13 @@ public class TileController : MonoBehaviour, ITile
 {
     private Collider2D tileCollider;
     private SpriteRenderer spriteRenderer;
-    private AudioManager audioManager;
 
     private Color32 hiddenColor = new Color32(0, 0, 0, 255);
     private Color32 pathColor = new Color32(120, 120, 120, 255);
-    private Color32 markedPathColor = new Color32(78, 202, 86, 255);
-    private Color32 markedDangerColor = new Color32(252, 75, 78, 255);
+    private Color32 wallColor = new Color32(25, 25, 25, 255);
+    private Color32 waterColor = new Color32(99, 155, 255, 255);
+    private Color32 creatureColor = new Color32(252, 75, 78, 255);
+    private Color32 pitfallColor = new Color32(62, 62, 62, 255);
     private Color32 revealColor;
 
     private string tileSoundName;
@@ -66,23 +67,20 @@ public class TileController : MonoBehaviour, ITile
                 tileSoundName = "Path";
                 break;
             case TileType.Wall:
-                revealColor = hiddenColor;
+                revealColor = wallColor;
                 tileSoundName = "Wall";
                 break;
             case TileType.Pitfall:
                 tileSoundName = "Pitfall";
-                revealColor = markedDangerColor;
+                revealColor = pitfallColor;
                 break;
             case TileType.Creature:
                 tileSoundName = "Creature";
-                revealColor = markedDangerColor;
+                revealColor = creatureColor;
                 break;
             case TileType.Water:
                 tileSoundName = "Water";
-                revealColor = markedDangerColor;
-                break;
-            case TileType.Danger:
-                revealColor = markedDangerColor;
+                revealColor = waterColor;
                 break;
             default:
                 break;

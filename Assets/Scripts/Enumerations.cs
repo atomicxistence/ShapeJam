@@ -2,7 +2,7 @@
 {
     Wall,
     Path,
-    Danger,
+    Unrevealed,
     Pitfall,
     Creature,
     Water

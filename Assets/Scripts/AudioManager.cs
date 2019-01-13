@@ -3,11 +3,28 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager SharedInstance { get; private set; }
+
     [SerializeField]
     private Sound[] sounds;
 
+    private Sound currentPlayingSound;
+
     private void Awake()
     {
+        #region Singleton
+        if (SharedInstance == null)
+        {
+            SharedInstance = this;
+        }
+        else if (SharedInstance != this)
+        {
+            Destroy(gameObject);
+        }
+        #endregion
+
+        DontDestroyOnLoad(gameObject);
+
         foreach (var sound in sounds)
         {
             sound.source = gameObject.AddComponent<AudioSource>();
@@ -31,7 +48,21 @@ public class AudioManager : MonoBehaviour
             Debug.LogError($"Did not find an audio source called {soundToPlay}.");
             return;
         }
-        soundToPlay.source.Play();
 
+        if (currentPlayingSound != null && currentPlayingSound.interruptable)
+        {
+            InterruptCurrentPlayingSoundCheck();
+        }
+
+        currentPlayingSound = soundToPlay;
+        soundToPlay.source.Play();
+    }
+
+    private void InterruptCurrentPlayingSoundCheck()
+    {
+        if (currentPlayingSound.source.isPlaying)
+        {
+            currentPlayingSound.source.Stop();
+        }
     }
 }
